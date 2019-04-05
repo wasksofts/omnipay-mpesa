@@ -1,4 +1,4 @@
-# omnipay-lipa-na-mpesa
+# omnipay-mpesa
 The Lipa na MPesa (LNM) API is an API designed to utilize the new feature introduced by Safaricom known as STK Push. 
 This feature allows the transaction initiation to be moved from the paying customer's side to the payee Organization's side. 
 This eliminates the challenge of having to remember business paybill numbers and account numbers and allows customers to simply 
@@ -22,14 +22,14 @@ PSRs you support to avoid any confusion with users and contributors.
 Instal the gateway using require. Require the `league/omnipay` base package and this gateway.
 
 ``` bash
-$ composer require league/omnipay wasksofts/omnipay-lipa-na-mpesa
+$ composer require league/omnipay wasksofts/omnipay-mpesa
 ```
 
 ## Usage
 
 The following gateways are provided by this package:
 
- * omnipay-lipa-na-mpesa
+ * omnipay-mpesa
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay) repository.
 
@@ -43,7 +43,7 @@ If you want to keep up to date with release announcements, discuss ideas for the
 or ask more detailed questions, there is also a [mailing list](https://groups.google.com/forum/#!forum/omnipay) which
 you can subscribe to.
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/:vendor/omnipay-lipa-na-mpesa/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/:vendor/omnipay-mpesa/issues),
 or better yet, fork the library and submit a pull request.
 
 ## Change log
