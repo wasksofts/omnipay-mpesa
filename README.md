@@ -10,8 +10,8 @@ It is a C2B transaction, but with the initiator being the organization instead o
 Since the organization has the option of presetting all required variables in the request before sending the request,
 this API has no Validation-Confirmation process like the previous C2B API.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor/omnipay-:gateway.svg?style=flat-square)]
-(https://packagist.org/packages/:vendor/omnipay-lpa-na-mpesa)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/wasksofts/omnipay-lipa-na-mpesa.svg?style=flat-square)]
+(https://packagist.org/packages/wasksofts/omnipay-lipa-na-mpesa)
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements :gateway support for Omnipay.
 
