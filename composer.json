@@ -1,17 +1,18 @@
 {
-    "name": "wasksofts/omnipay-lipa-na-mpesa",
-    "description": ":package_description",
+    "name": "wasksofts/omnipay-mpesa",
+    "description": "lipa na mpesa omnipay gateway",
     "keywords": [
         "omnipay",
-        "lipa-na-mpesa"
+        "mpesa",
+        "lipa na mpesa"
     ],
-    "homepage": "https://github.com/:vendor/omnipay-lipa-na-mpesa",
+    "homepage": "https://github.com/:vendor/omnipay-mpesa",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
+            "name": "stevenkamanu",
             "email": "mukamanusteven@gmail.com",
-            "homepage": "https://krnyadevelopers.co.ke"
+            "homepage": "https://kenyadevelopers.co.ke"
         }
     ],
     "require": {
