@@ -10,10 +10,9 @@ It is a C2B transaction, but with the initiator being the organization instead o
 Since the organization has the option of presetting all required variables in the request before sending the request,
 this API has no Validation-Confirmation process like the previous C2B API.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/wasksofts/omnipay-lipa-na-mpesa.svg?style=flat-square)]
-(https://packagist.org/packages/wasksofts/omnipay-lipa-na-mpesa)
+
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements :gateway support for Omnipay.
+processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
@@ -30,7 +29,7 @@ $ composer require league/omnipay wasksofts/omnipay-lipa-na-mpesa
 
 The following gateways are provided by this package:
 
- * :gateway
+ * omnipay-lipa-na-mpesa
 
 For general usage instructions, please see the main [Omnipay](https://github.com/thephpleague/omnipay) repository.
 
