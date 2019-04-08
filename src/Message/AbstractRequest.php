@@ -1,7 +1,7 @@
 <?php
 
 namespace Omnipay\Mpesa\Message;
-
+use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
 
 /**
@@ -10,9 +10,7 @@ use Omnipay\Common\Message\AbstractRequest as BaseAbstractRequest;
  */
 abstract class AbstractRequest extends BaseAbstractRequest
 {    
-    
-    const PROCESSOR_SEGMENT = 'stkpush/v1/processrequest';
-
+    const STKPUSH  = 'mpesa/stkpush/v1/processrequest';
     /**
      * Live Endpoint URL
      *
@@ -21,7 +19,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
      *
      * @var string URL
      */
-    protected $liveEndpoint = 'https://api.safaricom.co.ke/mpesa/';
+    protected $liveEndpoint = 'https://api.safaricom.co.ke/';
     
     /**
      * Sandbox Endpoint URL
@@ -34,7 +32,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
      *
      * @var string URL
      */
-    protected $testEndpoint = 'https://sandbox.safaricom.co.ke/mpesa/';
+    protected $testEndpoint = 'https://sandbox.safaricom.co.ke/';
 
 
     public function getShortCode()
@@ -67,16 +65,39 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->setParameter('consumer_secret', $value);
     }
 
-    public function getKey()
+    public function getToken()
     {
-        return $this->getParameter('key');
+        return $this->getParameter('token');
     }
 
-    public function setKey($value)
+    public function getPassKey()
     {
-        return $this->setParameter('key', $value);
+        return $this->getParameter('pass_key');
     }
-    
+
+    public function setPassKey($value)
+    {
+        return $this->setParameter('pass_key', $value);
+    }
+
+    public function setToken($value)
+    {
+        return $this->setParameter('token', $value);
+    }
+
+    protected function getBaseData()
+    {
+        $data = array();
+          return $data;
+    }
+
+    protected function getItemData()
+    {
+        $data = array();
+        $items = $this->getItems();
+
+        return $data;
+    }
     /**
      * Get HTTP Method.
      *
@@ -91,13 +112,11 @@ abstract class AbstractRequest extends BaseAbstractRequest
 
     protected function getEndpoint()
     {
-        $base = $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
-        return $base. self::PROCESSOR_SEGMENT;
+        return $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
     }
 
     public function sendData($data)
     {
-
         // Guzzle HTTP Client createRequest does funny things when a GET request
         // has attached data, so don't send the data if the method is GET.
         if ($this->getHttpMethod() == 'GET') {
@@ -119,8 +138,8 @@ abstract class AbstractRequest extends BaseAbstractRequest
                 $this->getEndpoint(),
                 array(
                     'Accept' => 'application/json',
-                    'Authorization' => 'Bearer ' . $this->getToken(),
-                    'Content-type' => 'application/json',
+                    'Authorization' => 'Bearer ' .$this->getToken(),
+                    'Content-Type' => 'application/json',
                 ),
                 $body
             );
@@ -139,9 +158,6 @@ abstract class AbstractRequest extends BaseAbstractRequest
     /**
      * Returns object JSON representation required by PayPal.
      * The PayPal REST API requires the use of JSON_UNESCAPED_SLASHES.
-     *
-     * Adapted from the official PayPal REST API PHP SDK.
-     * (https://github.com/paypal/PayPal-PHP-SDK/blob/master/lib/PayPal/Common/PayPalModel.php)
      *
      * @param int $options http://php.net/manual/en/json.constants.php
      * @return string
@@ -162,5 +178,4 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->response = new Response($this, $data, $statusCode);
     }
     
-
 }
