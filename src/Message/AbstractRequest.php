@@ -138,7 +138,7 @@ abstract class AbstractRequest extends BaseAbstractRequest
                 $this->getEndpoint(),
                 array(
                     'Accept' => 'application/json',
-                    'Authorization' => 'Bearer ' .'0Pd91DycTGdq1forDGdNmYMGcSfC' ,// $this->getToken(),
+                    'Authorization' => 'Bearer ' . $this->getToken(),
                     'Content-Type' => 'application/json',
                 ),
                 $body
