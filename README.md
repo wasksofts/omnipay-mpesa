@@ -10,6 +10,38 @@ It is a C2B transaction, but with the initiator being the organization instead o
 Since the organization has the option of presetting all required variables in the request before sending the request,
 this API has no Validation-Confirmation process like the previous C2B API.
 
+## APPLICATION
+Just want to see some code?
+[code]
+      use Omnipay\Omnipay;
+      use Omnipay\Mpesa;
+
+      $gateway = Omnipay::create('Mpesa');
+      $gateway->setShortCode('174379');
+      $gateway->setConsumerKey('');
+      $gateway->setConsumerSecret('');
+      $gateway->setPassKey('');
+      $gateway->setTestMode('sandbox'); 
+
+          //$response1 = $gateway->createToken()->send();
+          
+          $purchase = $gateway->purchase(array(
+             'amount' => '2',
+             'phone_number' => '254716224372',
+             'account' => 'apitest',
+             'description' => 'This is a purchase',
+             'callbackUrl' => 'https://exampl.com/callback_url.php',
+           ));
+           
+           
+           $response = $purchase->send();
+           $data = $response->getData();
+
+           $data = $response->getData();
+          echo '<pre>';print_r($data);echo '</pre>';
+
+
+[code]
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
@@ -62,11 +94,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email mukamanusteven@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [:author_name](https://github.com/wasksofts)
+- [wasksofts](https://github.com/wasksofts)
 - [All Contributors](../../contributors)
 
 ## License
