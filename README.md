@@ -12,7 +12,7 @@ this API has no Validation-Confirmation process like the previous C2B API.
 
 ## APPLICATION
 Just want to see some code?
-[code]
+
       use Omnipay\Omnipay;
       use Omnipay\Mpesa;
 
@@ -41,7 +41,6 @@ Just want to see some code?
           echo '<pre>';print_r($data);echo '</pre>';
 
 
-[code]
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
