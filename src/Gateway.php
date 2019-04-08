@@ -7,11 +7,11 @@ use Omnipay\Common\AbstractGateway;
 /**
  * Mpesa Gateway
  */
-class RedirectGateway extends AbstractGateway
+class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'Mpesa Redirect';
+        return 'Mpesa';
     }
 
     public function getDefaultParameters()
@@ -54,6 +54,17 @@ class RedirectGateway extends AbstractGateway
     {
         return $this->setParameter('consumer_secret', $value);
     }
+    
+    public function getPassKey()
+    {
+        return $this->getParameter('pass_key');
+    }
+
+    public function setPassKey($value)
+    {
+        return $this->setParameter('pass_key', $value);
+    }
+
      /**
      * Get OAuth 2.0 access token.
      *
@@ -174,11 +185,4 @@ class RedirectGateway extends AbstractGateway
         return $this->createRequest('\Omnipay\Mpesa\Message\MpesaPurchaseRequest', $parameters);
     }
 
-    /**
-     * @return Message\AuthorizeRequest
-     */
-    public function authorize(array $parameters = array())
-    {
-        return $this->createRequest('\Omnipay\Mpesa\Message\AuthorizeRequest', $parameters);
-    }
 }
