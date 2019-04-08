@@ -10,8 +10,8 @@ It is a C2B transaction, but with the initiator being the organization instead o
 Since the organization has the option of presetting all required variables in the request before sending the request,
 this API has no Validation-Confirmation process like the previous C2B API.
 
-## APPLICATION
-Just want to see some code?
+## Usage Guid
+Just want to see some code? 
 
       use Omnipay\Omnipay;
       use Omnipay\Mpesa;
@@ -26,11 +26,11 @@ Just want to see some code?
           //$response1 = $gateway->createToken()->send();
           
           $purchase = $gateway->purchase(array(
-             'amount' => '2',
-             'phone_number' => '254716224372',
+             'amount' => '100',
+             'phone_number' => '254708374149',
              'account' => 'apitest',
              'description' => 'This is a purchase',
-             'callbackUrl' => 'https://exampl.com/callback_url.php',
+             'callbackUrl' => 'https://example.com/callback_url.php',
            ));
            
            
