@@ -10,6 +10,7 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class Response extends AbstractResponse
 {
+    
     public function __construct(RequestInterface $request, $data)
     {
         $this->request = $request;
@@ -18,14 +19,33 @@ class Response extends AbstractResponse
 
     public function isSuccessful()
     {
-        return isset($this->data['success']);
+        return isset($this->data['ResponseCode']) && in_array($this->data['ResponseCode'], array('0', '000000'));
+  
     }
 
     public function getTransactionReference()
     {
-        if (isset($this->data['reference'])) {
-            return $this->data['reference'];
+        foreach (array('CheckoutRequestID',
+            'ResultDesc',
+            'ResponseDescription') as $key) {
+            if (isset($this->data[$key])) {
+                return $this->data[$key];
+            }
         }
     }
+    
+    public function getMessage()
+    {
+        if (isset($this->data['errorCode'])) {
+            return $this->data['errorCode'];
+        }
+
+        if (isset($this->data['errorMessage'])) {
+            return $this->data['errorMessage'];
+        }
+        
+        return null;
+    }
+
 
 }
