@@ -23,8 +23,6 @@ Just want to see some code?
       $gateway->setPassKey('');
       $gateway->setTestMode('sandbox'); 
 
-          //$response1 = $gateway->createToken()->send();
-          
           $purchase = $gateway->purchase(array(
              'amount' => '100',
              'phone_number' => '254708374149',
@@ -34,12 +32,16 @@ Just want to see some code?
            ));
            
            
-           $response = $purchase->send();
-           $data = $response->getData();
+           if ($response->isSuccessful()) {
+                 echo "Input your pin to purchase!";
 
-           $data = $response->getData();
+           }else{
+               // Payment failed
+               return $response->getMessage();
+          } 
+
+          $data = $response->getData();
           echo '<pre>';print_r($data);echo '</pre>';
-
 
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
