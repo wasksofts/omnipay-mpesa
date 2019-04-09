@@ -10,6 +10,7 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class Response extends AbstractResponse
 {
+    
     public function __construct(RequestInterface $request, $data)
     {
         $this->request = $request;
@@ -26,6 +27,7 @@ class Response extends AbstractResponse
     {
         foreach (array('CheckoutRequestID',
             'ResultDesc',
+            'MerchantRequestID',
             'ResponseDescription') as $key) {
             if (isset($this->data[$key])) {
                 return $this->data[$key];
