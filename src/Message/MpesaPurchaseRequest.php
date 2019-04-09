@@ -9,8 +9,7 @@ class MpesaPurchaseRequest extends AuthorizeRequest
 {
     public function getData()
     {
-        $data = parent::getData();
-        
+        $data = parent::getData();   
         return $data;
     }
 }
