@@ -14,24 +14,25 @@ class MpesaTokenRequest extends AbstractRequest
 
     protected function getEndpoint()
     {
-        return parent::getEndpoint() . 'oauth/v1/generate?';
+        return 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials';
     }
 
     public function sendData($data)
     {
         $body = $data ? http_build_query($data, '', '&') : null;
         $httpResponse = $this->httpClient->request(
-            $this->getHttpMethod(),
+            'GET',
             $this->getEndpoint(),
             array(
                 'Accept' => 'application/json',
                 'Authorization' => 'Basic ' . base64_encode("{$this->getConsumerKey()}:{$this->getConsumerSecret()}"),
             ),
-            $body
+            ''
         );
         // Empty response body should be parsed also as and empty array
         $body = (string) $httpResponse->getBody()->getContents();
         $jsonToArrayResponse = !empty($body) ? json_decode($body, true) : array();
-        return $this->response = new Response($this, $jsonToArrayResponse, $httpResponse->getStatusCode());
+        return $this->response = new MpesaResponse($this, $jsonToArrayResponse, $httpResponse->getStatusCode());
     }
+
 }
