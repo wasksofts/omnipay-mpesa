@@ -1,13 +1,5 @@
 # omnipay-mpesa
 
-
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
-
 The Lipa na MPesa (LNM) API is an API designed to utilize the new feature introduced by Safaricom known as STK Push. 
 This feature allows the transaction initiation to be moved from the paying customer's side to the payee Organization's side. 
 This eliminates the challenge of having to remember business paybill numbers and account numbers and allows customers to simply 
