@@ -21,17 +21,23 @@
             "Omnipay\\Mpesa\\": "src"
         }
     },
-    "require": {
+   "require": {
         "php": "^5.6|^7",
-        "omnipay/common": "^3"
+        "omnipay/common": "v3.0-alpha.2"
     },
     "require-dev": {
-        "omnipay/tests": "~3.0"
+        "omnipay/tests": "~3.0",
     },
-   
     "autoload-dev": {
         "psr-4": {
             "League\\Mpesa\\Test\\": "tests"
         }
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
