@@ -1,5 +1,6 @@
 {
     "name": "wasksofts/omnipay-mpesa",
+    "type": "library",
     "description": "lipa na mpesa omnipay gateway",
     "keywords": [
         "omnipay",
@@ -30,12 +31,5 @@
         "psr-4": {
             "League\\Mpesa\\Test\\": "tests"
         }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.1-dev"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
