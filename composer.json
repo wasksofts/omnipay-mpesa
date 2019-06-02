@@ -15,18 +15,19 @@
             "email": "mukamanusteven@gmail.com",
             "homepage": "https://wasksofts.com"
         }
-    ],
+    ], 
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Mpesa\\": "src"
+        }
+    },
     "require": {
         "omnipay/common": "v3.0-alpha.2"
     },
     "require-dev": {
         "omnipay/tests": "~3.0",
     },
-    "autoload": {
-        "psr-4": {
-            "Omnipay\\Mpesa\\": "src"
-        }
-    },
+   
     "autoload-dev": {
         "psr-4": {
             "League\\Mpesa\\Test\\": "tests"
