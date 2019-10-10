@@ -44,7 +44,7 @@ Just want to see some code?
           $data = $response->getData();
           echo '<pre>';print_r($data);echo '</pre>';
 
-##  callback url shoul have this:
+##  callback url you should have this:
     /**
      * Use this to process the STK push request callback
      */
