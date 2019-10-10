@@ -44,7 +44,27 @@ Just want to see some code?
           $data = $response->getData();
           echo '<pre>';print_r($data);echo '</pre>';
 
+##  callback url shoul have this:
+    /**
+     * Use this to process the STK push request callback
+     */
+        $callbackJSONData=file_get_contents('php://input');
+        $callbackData=json_decode($callbackJSONData);
 
+        $result=[
+            "resultDesc"=>$callbackData->Body->stkCallback->ResultDesc,
+            "resultCode"=>$callbackData->Body->stkCallback->ResultCode,
+            "merchantRequestID"=>$callbackData->Body->stkCallback->MerchantRequestID,
+            "checkoutRequestID"=>$callbackData->Body->stkCallback->CheckoutRequestID,
+            "amount"=>$callbackData->Body->stkCallback->CallbackMetadata->Item[0]->Value,
+            "mpesaReceiptNumber"=>$callbackData->Body->stkCallback->CallbackMetadata->Item[1]->Value,
+            "transactionDate"=>$callbackData->Body->stkCallback->CallbackMetadata->Item[3]->Value,
+            "phoneNumber"=>$callbackData->Body->stkCallback->CallbackMetadata->Item[4]->Value
+        ];
+
+        return json_encode($result);
+    //you can save json_data on database
+    
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
 
