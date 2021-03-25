@@ -9,7 +9,7 @@ reduce chances of wrong payments being performed to their systems.
 It is a C2B transaction, but with the initiator being the organization instead of the customer. 
 Since the organization has the option of presetting all required variables in the request before sending the request,
 this API has no Validation-Confirmation process like the previous C2B API.
-
+c2b implemntation caming soon
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
