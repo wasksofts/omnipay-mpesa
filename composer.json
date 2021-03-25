@@ -30,7 +30,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "v1.6"
+            "dev-master": "v1.7"
         }
     }
     ,"minimum-stability": "-dev",
