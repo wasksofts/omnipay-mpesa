@@ -5,7 +5,7 @@ namespace Omnipay\Mpesa;
 use Omnipay\Common\AbstractGateway;
 
 /**
- * Mpesa Gateway
+ * Mpesa Gateway api
  */
 class Gateway extends AbstractGateway
 {
