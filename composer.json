@@ -25,14 +25,11 @@
         "php": "^5.6|^7.4",
         "omnipay/common": "^3"
     },
-    "require-dev": {
-        "omnipay/tests": "^3"
-    },
     "extra": {
         "branch-alias": {
-            "dev-master": "v1.7-dev"
+            "dev-master": "v1.2-dev"
         }
     }
-    ,"minimum-stability": "-dev",
-     "prefer-stable": true
+    ,"minimum-stability": "stable"
+    }
 }
