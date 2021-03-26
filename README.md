@@ -65,6 +65,11 @@ Just want to see some code?
         return json_encode($result);
     //you can save json_data on database
     
+ ## c2b simulation 
+ We are implementing c2b  we will update soon
+ 
+ 
+ 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements omnipay-lipa-na-mpesa support for Omnipay.
 
