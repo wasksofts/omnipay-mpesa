@@ -18,6 +18,8 @@ class Gateway extends AbstractGateway
     {
         return array(
             'shortcode' => '',
+            'till_shortcode' => '',
+            'paybill_shortcode' => '',
             'consumer_key' => '',
             'consumer_secret' => '',
             'token' => '',
